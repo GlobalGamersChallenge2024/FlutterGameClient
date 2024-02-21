@@ -1,6 +1,6 @@
 /* For recording the stats in the current game */
 class GameStats {
-  // make the class a singleton
+  // make the class a singleton, can only have one instance of this class
   GameStats._privateConstructor();
   static final GameStats _instance = GameStats._privateConstructor();
   factory GameStats() {
@@ -17,10 +17,10 @@ class GameStats {
   static void addFish([int n = 1]) {
     _fish += n;
   }
-  static int displayNumTrash() {
+  static get trash {
     return _trash;
   }
-  static int displayNumFish() {
+  static get fish {
     return _fish;
   }
 }

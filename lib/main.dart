@@ -5,13 +5,6 @@ import 'game_stats.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // Debug
-  print("Debug\nFish: ${GameStats.displayNumFish()}, Trash: ${GameStats.displayNumTrash()}");
-  GameStats.addFish(2);
-  print("Fish: ${GameStats.displayNumFish()}, Trash: ${GameStats.displayNumTrash()}");
-  GameStats.addTrash(1);
-  print("Fish: ${GameStats.displayNumFish()}, Trash: ${GameStats.displayNumTrash()}");
-
   runApp(const MyApp());
 }
 
