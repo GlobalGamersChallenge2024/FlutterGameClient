@@ -1,7 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
-import 'package:global_gamers_challenge_2024/player.dart';
-import 'game_stats.dart';
+import 'player.dart';
+import 'game_stats/widget.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +20,11 @@ class MyApp extends StatelessWidget {
       map: WorldMapByTiled(
           TiledReader.asset('tiled/map.json')
       ),
-        player: MainPlayer(Vector2(40,40))
+      player: MainPlayer(Vector2(40,40)),
+      overlayBuilderMap: {
+        'gameStats': (context, game) => const GameStatsWidget(),
+      },
+      initialActiveOverlays: const ['gameStats']
     );
   }
 }
