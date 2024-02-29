@@ -65,6 +65,7 @@ flutter:
       - assets/images/tiled/map.json
       - assets/images/tiled/plains.json
       - assets/images/tiled/plains.png
+      - assets/images/trash/trash.png
       - assets/images/player/knight_idle.png
       - assets/images/player/knight_run.png
 

@@ -1,5 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'trash.dart';
 import 'player.dart';
 import 'game_stats/widget.dart';
 
@@ -18,9 +19,12 @@ class MyApp extends StatelessWidget {
         directional: JoystickDirectional(),
       ),
       map: WorldMapByTiled(
-          TiledReader.asset('tiled/map.json')
+          TiledReader.asset('tiled/map.json'),
+          objectsBuilder: {
+            'trash': (properties) => Trash(properties.position ?? Vector2(8, 16)),
+          }
       ),
-      player: MainPlayer(Vector2(40,40)),
+      player: MainPlayer(Vector2(0,0)),
       overlayBuilderMap: {
         'gameStats': (context, game) => const GameStatsWidget(),
       },
